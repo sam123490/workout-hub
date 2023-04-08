@@ -8,32 +8,19 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkoutHub | Login</title>
+<title>WorkoutHub | Dashboard</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
 
 	<div class="container">
-		<div class="row mt-5">
-			<div class="col-md-4 col-sm-12">
-				<div class="p-3 border rounded bg-light">
-					<form:form action="/login" method="post" modelAttribute="loginUser">
-						<form:label for="email" path="email" class="form-label">Email:</form:label>
-						<form:errors path="email" class="text-danger" />
-						<form:input id="email" path="email" class="form-control" />
-						
-						<form:label for="password" path="password" class="form-label">Password:</form:label>
-						<form:errors path="password" class="text-danger" />
-						<form:input id="password" type="password" path="password" class="form-control" />
-						
-						<input type="submit" class="btn btn-primary mt-3" />
-					</form:form>
-					<p>Don't have an account?</p>
-					<a href="/register">register here</a>
-				</div>
+		<div class="row p-3 align-items-center">
+			<div class="col-4">
+				<h1>Welcome <c:out value="${ user.firstName }" />...</h1>
 			</div>
-			<div class="col-md-8 col-sm-12">
-				<p>Add Picture Here</p>
+			<div class="col-4 offset-4 d-flex justify-content-end">
+				<a href="#">My Account</a>
+				<a href="/logout" class="ms-4">Logout</a>
 			</div>
 		</div>
 	</div>

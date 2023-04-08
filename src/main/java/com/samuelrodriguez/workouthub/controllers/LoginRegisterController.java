@@ -5,6 +5,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -41,6 +42,7 @@ public class LoginRegisterController {
 		if(user == null) {
 			return "login.jsp";
 		}
+		session.setAttribute("userId", user.getId());
 		return "redirect:/dashboard";
 	}
 	
@@ -66,8 +68,24 @@ public class LoginRegisterController {
 	}
 	
 	@GetMapping("/dashboard")
-	public String renderDashboard() {
-		return "dashbaord.jsp";
+	public String renderDashboard(
+			Model model,
+			HttpSession session
+			) {
+		if (session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		User user = userService.getOne( (Long) session.getAttribute("userId"));
+		model.addAttribute("user", user);
+		return "dashboard.jsp";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(
+			HttpSession session
+			) {
+		session.removeAttribute("userId");
+		return "redirect:/login";
 	}
 	
 }

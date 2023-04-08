@@ -22,7 +22,7 @@ public class UserService {
 		}
 		
 		Optional<User> u = userRepo.findByEmail(loginUser.getEmail());
-		if (!u.isPresent()) {
+		if(!u.isPresent()) {
 			result.rejectValue("email", "email", "sorry, we don't have that email in our records");
 			return null;
 		}
@@ -56,4 +56,13 @@ public class UserService {
 		return userRepo.save(newUser);
 	}
 
+	public User getOne(Long id) {
+		Optional<User> user = userRepo.findById(id);
+		if (user.isPresent()) {
+			return user.get();
+		} else {
+			return null;
+		}
+	}
+	
 }
