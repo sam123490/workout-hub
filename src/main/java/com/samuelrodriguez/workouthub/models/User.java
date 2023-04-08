@@ -1,12 +1,15 @@
 package com.samuelrodriguez.workouthub.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -44,6 +47,12 @@ public class User {
 	@NotBlank(message="please confirm your password")
 	private String confirmPassword;
 	
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+	private List<Workout> workouts;
+	
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+	private List<Exercise> exercises;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
@@ -52,7 +61,7 @@ public class User {
 	private Date updatedAt;
 	
 	public User() {}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -101,6 +110,22 @@ public class User {
 		this.confirmPassword = confirmPassword;
 	}
 
+	public List<Workout> getWorkouts() {
+		return workouts;
+	}
+
+	public void setWorkouts(List<Workout> workouts) {
+		this.workouts = workouts;
+	}
+
+	public List<Exercise> getExercises() {
+		return exercises;
+	}
+
+	public void setExercises(List<Exercise> exercises) {
+		this.exercises = exercises;
+	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
@@ -116,7 +141,7 @@ public class User {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
+
 	@PrePersist
 	public void onCreate() {
 		this.createdAt = new Date();
