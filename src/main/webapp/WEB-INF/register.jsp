@@ -17,7 +17,15 @@
 		<div class="row mt-5">
 			<div class="col-md-4 col-sm-12">
 				<div class="border p-2">
-					<form:form action="/login" method="post" modelAttribute="loginUser">
+					<form:form action="/register" method="post" modelAttribute="user">
+						<form:label for="firstName" path="firstName" class="form-label">First Name:</form:label>
+						<form:errors path="firstName" class="text-danger" />
+						<form:input id="firstName" path="firstName" class="form-control" />
+					
+						<form:label for="lastName" path="lastName" class="form-label">Last Name:</form:label>
+						<form:errors path="lastName" class="text-danger" />
+						<form:input id="lastName" path="lastName" class="form-control" />
+					
 						<form:label for="email" path="email" class="form-label">Email:</form:label>
 						<form:errors path="email" class="text-danger" />
 						<form:input id="email" path="email" class="form-control" />
@@ -26,10 +34,14 @@
 						<form:errors path="password" class="text-danger" />
 						<form:input id="password" path="password" class="form-control" />
 						
+						<form:label for="confirmPassword" path="password" class="form-label">Confirm Password:</form:label>
+						<form:errors path="confirmPassword" class="text-danger" />
+						<form:input id="confirmPassword" path="confirmPassword" class="form-control" />
+						
 						<input type="submit" class="btn btn-primary mt-3" />
 					</form:form>
-					<p>Don't have an account?</p>
-					<a href="/register">register here</a>
+					<p>Already have an account?</p>
+					<a href="/login">login here</a>
 				</div>
 			</div>
 			<div class="col-md-8 col-sm-12">
