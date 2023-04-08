@@ -3,6 +3,7 @@ package com.samuelrodriguez.workouthub.controllers;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.samuelrodriguez.workouthub.models.LoginUser;
 import com.samuelrodriguez.workouthub.models.User;
+import com.samuelrodriguez.workouthub.services.UserService;
 
 @Controller
 public class LoginRegisterController {
-
+	@Autowired
+	private UserService userService;
+	
 	@GetMapping("/")
 	public String redirect() {
 		return "redirect:/login";
@@ -38,17 +42,22 @@ public class LoginRegisterController {
 	
 	@GetMapping("/register")
 	public String renderRegister(
-			@ModelAttribute("user") User user
+			@ModelAttribute("newUser") User newUser
 			) {
 		return "register.jsp";
 	}
 	
 	@PostMapping("/register")
 	public String processRegister(
-			@Valid @ModelAttribute("user") User user,
+			@Valid @ModelAttribute("newUser") User newUser,
 			BindingResult result,
 			HttpSession session
 			) {
+		User user = userService.register(newUser, result);
+		if(user == null) {
+			return "register.jsp";
+		}
+		session.setAttribute("userId", user.getId());
 		return "redirect:/dashboard";
 	}
 	

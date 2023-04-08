@@ -16,8 +16,8 @@
 	<div class="container">
 		<div class="row mt-5">
 			<div class="col-md-4 col-sm-12">
-				<div class="border p-2">
-					<form:form action="/register" method="post" modelAttribute="user">
+				<div class="border rounded p-3">
+					<form:form action="/register" method="post" modelAttribute="newUser">
 						<form:label for="firstName" path="firstName" class="form-label">First Name:</form:label>
 						<form:errors path="firstName" class="text-danger" />
 						<form:input id="firstName" path="firstName" class="form-control" />
@@ -32,11 +32,11 @@
 						
 						<form:label for="password" path="password" class="form-label">Password:</form:label>
 						<form:errors path="password" class="text-danger" />
-						<form:input id="password" path="password" class="form-control" />
+						<form:input id="password" type="password" path="password" class="form-control" />
 						
 						<form:label for="confirmPassword" path="password" class="form-label">Confirm Password:</form:label>
 						<form:errors path="confirmPassword" class="text-danger" />
-						<form:input id="confirmPassword" path="confirmPassword" class="form-control" />
+						<form:input id="confirmPassword" type="password" path="confirmPassword" class="form-control" />
 						
 						<input type="submit" class="btn btn-primary mt-3" />
 					</form:form>

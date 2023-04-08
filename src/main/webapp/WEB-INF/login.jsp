@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row mt-5">
 			<div class="col-md-4 col-sm-12">
-				<div class="border p-2">
+				<div class="border rounded p-3">
 					<form:form action="/login" method="post" modelAttribute="loginUser">
 						<form:label for="email" path="email" class="form-label">Email:</form:label>
 						<form:errors path="email" class="text-danger" />
@@ -24,7 +24,7 @@
 						
 						<form:label for="password" path="password" class="form-label">Password:</form:label>
 						<form:errors path="password" class="text-danger" />
-						<form:input id="password" path="password" class="form-control" />
+						<form:input id="password" type="password" path="password" class="form-control" />
 						
 						<input type="submit" class="btn btn-primary mt-3" />
 					</form:form>
