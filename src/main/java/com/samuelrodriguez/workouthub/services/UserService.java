@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.samuelrodriguez.workouthub.models.LoginUser;
 import com.samuelrodriguez.workouthub.models.User;
 import com.samuelrodriguez.workouthub.repositories.UserRepository;
 
@@ -14,6 +15,25 @@ import com.samuelrodriguez.workouthub.repositories.UserRepository;
 public class UserService {
 	@Autowired
 	private UserRepository userRepo;
+	
+	public User login(LoginUser loginUser, BindingResult result) {
+		if (result.hasErrors()) {
+			return null;
+		}
+		
+		Optional<User> u = userRepo.findByEmail(loginUser.getEmail());
+		if (!u.isPresent()) {
+			result.rejectValue("email", "email", "sorry, we don't have that email in our records");
+			return null;
+		}
+		
+		User user = u.get();
+		if(!BCrypt.checkpw(loginUser.getPassword(), user.getPassword())) {
+			result.rejectValue("password", "Matches", "wrong password");
+			return null;
+		}
+		return user;
+	}
 	
 	public User register(User newUser, BindingResult result) {
 		if (result.hasErrors()) {
@@ -35,5 +55,5 @@ public class UserService {
 		newUser.setPassword(pw_hash);
 		return userRepo.save(newUser);
 	}
-	
+
 }

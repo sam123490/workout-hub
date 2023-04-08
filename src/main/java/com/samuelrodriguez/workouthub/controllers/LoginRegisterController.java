@@ -37,6 +37,10 @@ public class LoginRegisterController {
 			BindingResult result,
 			HttpSession session
 			) {
+		User user = userService.login(loginUser, result);
+		if(user == null) {
+			return "login.jsp";
+		}
 		return "redirect:/dashboard";
 	}
 	
