@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container border-bottom">
 		<div class="row p-3 align-items-center">
 			<div class="col-md-4 col-sm-12">
 				<h1>Welcome <c:out value="${ user.firstName }" />...</h1>

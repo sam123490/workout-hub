@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container border-bottom">
 		<div class="row p-3 align-items-center">
 			<div class="col-md-4 col-sm-12">
 				<h1>Workout Hub</h1>
@@ -27,9 +27,13 @@
 	</div>
 	
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-sm-12 col-md-10 col-lg-8">
+		<div class="row p-3">
+			<div class="col">
 				<h2><c:out value="${ workout.name }" /></h2>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-md-4">
 				<p>Next let's add some exercises...</p>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/workouts/${workout.id}/add_exercise" method="post" modelAttribute="newExercise">
@@ -65,9 +69,31 @@
 						<form:errors path="note" class="text-danger" />
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
-						<input type="submit" class="btn btn-primary mt-3" />
+						<input type="submit" value="add exercise" class="btn btn-primary mt-3" />
+						<a href="/workouts/${ workout.id }" class="btn btn-success mt-3">complete workout</a>
 					</form:form>
 				</div>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<p>Exercises:</p>
+				<table class="table table-striped">
+					<tr>
+						<th>name</th>
+						<th>sets</th>
+						<th>reps</th>
+						<th>weight</th>
+						<th>note</th>
+					</tr>
+					<c:forEach var="exercise" items="${ workout.exercises }">
+					<tr>
+						<td><c:out value="${ exercise.name }" /></td>
+						<td><c:out value="${ exercise.sets }" /></td>
+						<td><c:out value="${ exercise.repetitions }" /></td>
+						<td><c:out value="${ exercise.weight }" /> <c:out value="${ exercise.unit }" /></td>
+						<td><c:out value="${ exercise.note }" /></td>
+					</tr>
+					</c:forEach>
+				</table>
 			</div>
 		</div>
 	</div>
