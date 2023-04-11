@@ -43,7 +43,7 @@
 				  	<div class="card-body">
 				    	<h5 class="card-title">Create a Workout</h5>
 				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				    	<a href="#" class="btn btn-primary">Start!</a>
+				    	<a href="/workouts/create" class="btn btn-primary">Start!</a>
 				  	</div>
 				</div>
 			</div>

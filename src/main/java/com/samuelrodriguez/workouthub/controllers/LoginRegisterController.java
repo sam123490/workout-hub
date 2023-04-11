@@ -72,7 +72,7 @@ public class LoginRegisterController {
 			Model model,
 			HttpSession session
 			) {
-		if (session.getAttribute("userId") == null) {
+		if(session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
 		User user = userService.getOne( (Long) session.getAttribute("userId"));
