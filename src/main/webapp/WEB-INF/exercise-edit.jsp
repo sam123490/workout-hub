@@ -32,7 +32,8 @@
 				<h2><c:out value="${ workout.name }" /></h2>
 				<p>Next let's add some exercises...</p>
 				<div class="p-3 border rounded bg-light">
-					<form:form action="/workouts/${workout.id}/edit" method="post" modelAttribute="newExercise">
+					<form:form action="/workouts/${workout.id}/exercises/${editExercise.id}/edit" method="post" modelAttribute="editExercise">
+						<input type="hidden" name="_method" value="put">
 						<form:input type="hidden" path="workout" value="${ workout.id }" />
 						<form:input type="hidden" path="user" value="${ user.id }" />
 						
@@ -65,8 +66,8 @@
 						<form:errors path="note" class="text-danger" />
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
-						<input type="submit" value="add exercise" class="btn btn-primary mt-3" />
-						<a href="/workouts/${ workout.id }/view" class="btn btn-success mt-3">complete</a>
+						<input type="submit" class="btn btn-primary mt-3" />
+						<a href="/workouts/${ workout.id }/edit" class="btn btn-danger mt-3">cancel</a>
 					</form:form>
 				</div>
 			</div>
@@ -79,7 +80,6 @@
 						<th>reps</th>
 						<th>weight</th>
 						<th>note</th>
-						<th>actions</th>
 					</tr>
 					<c:forEach var="exercise" items="${ workout.exercises }">
 					<tr>
@@ -88,9 +88,6 @@
 						<td><c:out value="${ exercise.repetitions }" /></td>
 						<td><c:out value="${ exercise.weight }" /> <c:out value="${ exercise.unit }" /></td>
 						<td><c:out value="${ exercise.note }" /></td>
-						<td>
-							<a href="/workouts/${workout.id}/exercises/${exercise.id}/edit">edit</a>
-						</td>
 					</tr>
 					</c:forEach>
 				</table>

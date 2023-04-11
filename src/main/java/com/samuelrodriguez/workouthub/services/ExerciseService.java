@@ -1,5 +1,7 @@
 package com.samuelrodriguez.workouthub.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +13,17 @@ public class ExerciseService {
 	@Autowired
 	private ExerciseRepository exerciseRepo;
 	
-	public Exercise create(Exercise exercise) {
+	public Exercise createOrUpdate(Exercise exercise) {
 		return exerciseRepo.save(exercise);
+	}
+	
+	public Exercise getOne(Long id) {
+		Optional<Exercise> exercise = exerciseRepo.findById(id);
+		if(exercise.isPresent()) {
+			return exercise.get();
+		} else {
+			return null;
+		}
 	}
 	
 }

@@ -60,10 +60,10 @@ public class WorkoutController {
 			return "workout-create.jsp";
 		}
 		Workout workout = workoutService.create(newWorkout);
-		return "redirect:/workouts/" + workout.getId() + "/add_exercise";
+		return "redirect:/workouts/" + workout.getId() + "/edit";
 	}
 	
-	@GetMapping("/workouts/{workoutId}/add_exercise")
+	@GetMapping("/workouts/{workoutId}/edit")
 	public String renderWorkoutAdd(
 			@PathVariable("workoutId") Long workoutId,
 			@ModelAttribute("newExercise") Exercise newExercise,
@@ -74,16 +74,18 @@ public class WorkoutController {
 			return "redirect:/login";
 		}
 		Workout workout = workoutService.getOne(workoutId);
-		if(workout.getUser().getId() != session.getAttribute("userId")) {
-			return "redirect:/dashboard";
-		}
+		System.out.println(workout.getUser().getId());
+		System.out.println(session.getAttribute("userId"));
+//		if(workout.getUser().getId() != (Long) session.getAttribute("userId")) {
+//			return "redirect:/dashboard";
+//		}
 		User user = userService.getOne( (Long) session.getAttribute("userId"));
 		model.addAttribute("user", user);
 		model.addAttribute("workout", workoutService.getOne(workoutId));
 		return "workout-add.jsp";
 	}
 	
-	@PostMapping("/workouts/{workoutId}/add_exercise")
+	@PostMapping("/workouts/{workoutId}/edit")
 	public String processWorkoutAdd(
 			@PathVariable("workoutId") Long workoutId,
 			@Valid @ModelAttribute("newExercise") Exercise newExercise,
@@ -100,8 +102,8 @@ public class WorkoutController {
 			model.addAttribute("workout", workoutService.getOne(workoutId));
 			return "workout-add.jsp";
 		}
-		exerciseService.create(newExercise);
-		return "redirect:/workouts/" + workoutId + "/add_exercise";
+		exerciseService.createOrUpdate(newExercise);
+		return "redirect:/workouts/" + workoutId + "/edit";
 	}
 	
 	@GetMapping("/workouts/{workoutId}/view")
@@ -117,7 +119,7 @@ public class WorkoutController {
 		return "workout-view.jsp";
 	}
 	
-	@GetMapping("/my_workouts")
+	@GetMapping("/workouts/my_workouts")
 	public String renderUserWorkouts(
 			Model model,
 			HttpSession session

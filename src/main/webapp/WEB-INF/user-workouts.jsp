@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkoutHub | Add Exercise</title>
+<title>WorkoutHub | My Workouts</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
@@ -29,14 +29,10 @@
 	</div>
 	
 	<div class="container">
-		<div class="row p-3">
-			<div class="col">
-				<h2>My Workouts</h2>
-			</div>
-		</div>
 		<div class="row p-3 justify-content-center">
 			<div class="col-sm-10 col-md-8">
-				<table class="table table-striped table-hover">
+				<h2>My Workouts</h2>
+				<table class="table table-striped table-hover border">
 					<tr>
 						<th>Name:</th>
 						<th># of Exercises:</th>
@@ -48,6 +44,10 @@
 						<td><c:out value="${ workout.name }" /></td>
 						<td>${fn:length(workout.exercises)}</td>
 						<td><fmt:formatDate type = "date" value = "${workout.createdAt}" /></td>
+						<td>
+							<a href="/workouts/${ workout.id }/edit">edit</a>
+							<a href="/workouts/${ workout.id }/work_out" class="ms-2">work out!</a>
+						</td>
 					</tr>
 					</c:forEach>
 				</table>
