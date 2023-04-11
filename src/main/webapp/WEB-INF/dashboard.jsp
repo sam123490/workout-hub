@@ -15,12 +15,59 @@
 
 	<div class="container">
 		<div class="row p-3 align-items-center">
-			<div class="col-4">
+			<div class="col-md-4 col-sm-12">
 				<h1>Welcome <c:out value="${ user.firstName }" />...</h1>
 			</div>
-			<div class="col-4 offset-4 d-flex justify-content-end">
+			<nav class="col-md-4 col-sm-12 offset-4 d-flex justify-content-end">
 				<a href="#">My Account</a>
 				<a href="/logout" class="ms-4">Logout</a>
+			</nav>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row p-3 justify-content-evenly">
+			<div class="col-md-5 col-sm-12">
+				<div class="card" >
+				  	<img src="..." class="card-img-top" alt="...">
+				  	<div class="card-body">
+				    	<h5 class="card-title">My Workouts</h5>
+				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<a href="#" class="btn btn-primary">View</a>
+				  	</div>
+				</div>
+			</div>
+			<div class="col-md-5 col-sm-12">
+				<div class="card" >
+				  	<img src="..." class="card-img-top" alt="...">
+				  	<div class="card-body">
+				    	<h5 class="card-title">Create a Workout</h5>
+				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<a href="#" class="btn btn-primary">Start!</a>
+				  	</div>
+				</div>
+			</div>
+		</div>
+		<div class="row p-3 justify-content-evenly">
+			<div class="col-md-5 col-sm-12">
+				<div class="card" >
+				  	<img src="..." class="card-img-top" alt="...">
+				  	<div class="card-body">
+				    	<h5 class="card-title">My Personal Records</h5>
+				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<a href="#" class="btn btn-primary">My Account</a>
+				  	</div>
+				</div>
+			</div>
+			<div class="col-md-5 col-sm-12">
+				<div class="card" >
+				  	<img src="..." class="card-img-top" alt="...">
+				  	<div class="card-body">
+				    	<h5 class="card-title">Find Workouts made by Others</h5>
+				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<a href="#" class="btn btn-primary">Explore</a>
+				  	</div>
+				</div>
 			</div>
 		</div>
 	</div>
