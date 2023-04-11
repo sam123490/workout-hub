@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row p-3 align-items-center">
 			<div class="col-md-4 col-sm-12">
-				<h1>New Workout</h1>
+				<h1>Workout Hub</h1>
 			</div>
 			<nav class="col-md-4 col-sm-12 offset-4 d-flex justify-content-end">
 				<a href="/dashboard">Home</a>
@@ -29,6 +29,7 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-sm-12 col-md-10 col-lg-8">
+				<h2>New Workout</h2>
 				<p>Let's start by giving your workout a name...</p>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/workouts/create" method="post" modelAttribute="newWorkout">

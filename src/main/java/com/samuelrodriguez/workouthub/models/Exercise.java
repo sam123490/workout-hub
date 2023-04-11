@@ -47,7 +47,7 @@ public class Exercise {
 	@NotBlank(message="please select a unit")
 	private String unit;
 	
-	@Max(value=50, message="notes have a maximum of 50 chracters")
+	@Size(max=50, message="notes have a maximum capacity of 50 characters")
 	private String note;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
