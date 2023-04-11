@@ -73,6 +73,10 @@ public class WorkoutController {
 		if(session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
+		Workout workout = workoutService.getOne(workoutId);
+		if(workout.getUser().getId() != session.getAttribute("userId")) {
+			return "redirect:/dashboard";
+		}
 		User user = userService.getOne( (Long) session.getAttribute("userId"));
 		model.addAttribute("user", user);
 		model.addAttribute("workout", workoutService.getOne(workoutId));
@@ -98,6 +102,31 @@ public class WorkoutController {
 		}
 		exerciseService.create(newExercise);
 		return "redirect:/workouts/" + workoutId + "/add_exercise";
+	}
+	
+	@GetMapping("/workouts/{workoutId}/view")
+	public String renderWorkout(
+			@PathVariable("workoutId") Long workoutId,
+			Model model,
+			HttpSession session
+			) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("workout", workoutService.getOne(workoutId));
+		return "workout-view.jsp";
+	}
+	
+	@GetMapping("/my_workouts")
+	public String renderUserWorkouts(
+			Model model,
+			HttpSession session
+			) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("workouts", workoutService.getByUserId( (Long) session.getAttribute("userId")));
+		return "user-workouts.jsp";
 	}
 	
 }

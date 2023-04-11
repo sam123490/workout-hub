@@ -70,7 +70,7 @@
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
 						<input type="submit" value="add exercise" class="btn btn-primary mt-3" />
-						<a href="/workouts/${ workout.id }" class="btn btn-success mt-3">complete workout</a>
+						<a href="/workouts/${ workout.id }/view" class="btn btn-success mt-3">complete workout</a>
 					</form:form>
 				</div>
 			</div>
