@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.samuelrodriguez.workouthub.models.Exercise;
 import com.samuelrodriguez.workouthub.models.User;
@@ -49,7 +50,8 @@ public class WorkoutController {
 			@Valid @ModelAttribute("newWorkout") Workout newWorkout,
 			BindingResult result,
 			Model model,
-			HttpSession session
+			HttpSession session,
+			RedirectAttributes redirectAttributes
 			) {
 		if(session.getAttribute("userId") == null) {
 			return "redirect:/login";
@@ -60,6 +62,7 @@ public class WorkoutController {
 			return "workout-create.jsp";
 		}
 		Workout workout = workoutService.create(newWorkout);
+		redirectAttributes.addFlashAttribute("success", "Awesome, now let's add some exercises to your workout!");
 		return "redirect:/workouts/" + workout.getId() + "/edit";
 	}
 	

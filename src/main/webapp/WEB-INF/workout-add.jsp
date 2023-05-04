@@ -44,6 +44,15 @@
   		</div>
 	</nav>
 	
+	<c:choose>
+         <c:when test = "${success != null}">
+         	<div class="alert alert-success alert-dismissible fade show" role="alert">
+         		<c:out value="${ success }" />
+  				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+         </c:when>
+	</c:choose>
+	
 	<div class="container">
 		<div class="row mt-3">
 			<div class="col">
