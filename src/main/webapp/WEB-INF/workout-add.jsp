@@ -37,7 +37,7 @@
           	</ul>
         	</li>
       		</ul>
-      		<div class="d-flex">
+      		<div>
         		<a href="/logout" class="text-decoration-none link-light">Logout</a>
       		</div>
     	</div>
@@ -45,10 +45,17 @@
 	</nav>
 	
 	<div class="container">
+		<div class="row mt-3">
+			<div class="col">
+				<h2>Workout: <c:out value="${ workout.name }" /></h2>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-sm-12 col-md-3">
-				<h2><c:out value="${ workout.name }" /></h2>
-				<p>Next let's add some exercises...</p>
+			<div class="mt-3 col-sm-12 col-md-4">
+				<h4>Add Exercise</h4>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/workouts/${workout.id}/edit" method="post" modelAttribute="newExercise">
 						<form:input type="hidden" path="workout" value="${ workout.id }" />
@@ -83,14 +90,14 @@
 						<form:errors path="note" class="text-danger" />
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
-						<input type="submit" value="add exercise" class="btn btn-primary mt-3" />
-						<a href="/workouts/${ workout.id }/view" class="btn btn-success mt-3">complete</a>
+						<input type="submit" value="Add Exercise" class="btn btn-primary mt-3" />
+						<a href="/workouts/${ workout.id }/view" class="btn btn-outline-success mt-3">Complete Workout</a>
 					</form:form>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-7">
-				<p>Exercises:</p>
-				<table class="table table-striped">
+			<div class="mt-3 col-sm-12 col-md-8">
+				<h4>Exercises</h4>
+				<table class="table table-striped table-hover border">
 					<tr>
 						<th>name</th>
 						<th>sets</th>

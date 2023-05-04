@@ -45,10 +45,17 @@
 	</nav>
 	
 	<div class="container">
+		<div class="row mt-3">
+			<div class="col">
+				<h2>Workout: <c:out value="${ workout.name }" /></h2>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-sm-12 col-md-3">
-				<h2><c:out value="${ workout.name }" /></h2>
-				<p>Next let's add some exercises...</p>
+			<div class="mt-3 col-sm-12 col-md-4">
+				<h4>Edit Exercise</h4>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/workouts/${workout.id}/exercises/${editExercise.id}/edit" method="post" modelAttribute="editExercise">
 						<input type="hidden" name="_method" value="put">
@@ -70,7 +77,7 @@
 						<form:label for="unit" path="unit" class="form-label">Unit:</form:label>
 						<form:errors path="unit" class="text-danger" />
 						<form:select id="unit" path="unit" class="form-select" aria-label="Default select example">
-							<option disabled selected>SELECT A UNIT</option>
+							<option selected value="${ editExercise.unit }"><c:out value="${ editExercise.unit }" /></option>
 							<option value="lbs">lbs</option>
 							<option value="kg">Kg</option>
 							<option value="Other">Other</option>
@@ -84,13 +91,13 @@
 						<form:errors path="note" class="text-danger" />
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
-						<input type="submit" class="btn btn-primary mt-3" />
-						<a href="/workouts/${ workout.id }/edit" class="btn btn-danger mt-3">cancel</a>
+						<input type="submit" value="Submit Changes" class="btn btn-primary mt-3" />
+						<a href="/workouts/${ workout.id }/edit" class="btn btn-outline-danger mt-3">Cancel</a>
 					</form:form>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-7">
-				<p>Exercises:</p>
+			<div class="mt-3 col-sm-12 col-md-8">
+				<h4>Exercises</h4>
 				<table class="table table-striped">
 					<tr>
 						<th>name</th>

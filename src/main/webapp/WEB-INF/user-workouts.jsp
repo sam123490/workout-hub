@@ -47,15 +47,15 @@
 	</nav>
 	
 	<div class="container">
-		<div class="row p-3 justify-content-center">
+		<div class="row mt-3 justify-content-center">
 			<div class="col-sm-12 col-md-10 col-lg-8">
 				<h2>My Workouts</h2>
 				<table class="table table-striped table-hover border">
 					<tr>
-						<th>Name:</th>
-						<th># of Exercises:</th>
-						<th>Created: </th>
-						<th>actions</th>
+						<th>Name</th>
+						<th># of Exercises</th>
+						<th>Created</th>
+						<th>Actions</th>
 					</tr>
 					<c:forEach var="workout" items="${ workouts }">
 					<tr>
