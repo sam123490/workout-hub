@@ -13,18 +13,39 @@
 </head>
 <body>
 
-	<div class="container border-bottom">
-		<div class="row p-3 align-items-center">
-			<div class="col-md-4 col-sm-12">
-				<h1>Workout Hub</h1>
-			</div>
-			<nav class="col-md-4 col-sm-12 offset-4 d-flex justify-content-end">
-				<a href="/dashboard">Home</a>
-				<a href="#" class="ms-4">My Account</a>
-				<a href="/logout" class="ms-4">Logout</a>
-			</nav>
-		</div>
-	</div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+    		</button>
+    	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+      		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      			<li class="nav-item">
+          		<a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
+        		</li>
+        		<li class="nav-item">
+          		<a class="nav-link active" aria-current="page" href="#">My Account</a>
+        		</li>
+        		<li class="nav-item dropdown">
+          		<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+          	<ul class="dropdown-menu">
+	            <li><a class="dropdown-item" href="/workouts/my_workouts">My Workouts</a></li>
+	            <li><a class="dropdown-item" href="/workouts/create">Create a Workout</a></li>
+	            <li><a class="dropdown-item" href="#">Personal Records</a></li>
+	            <li><a class="dropdown-item" href="#">Find Workouts</a></li>
+	            <li><hr class="dropdown-divider"></li>
+	            <li><a class="dropdown-item" href="#">My Account</a></li>
+          	</ul>
+        	</li>
+      		</ul>
+      		<div class="d-flex">
+      			
+        		<a href="/logout" class="btn btn-outline-danger">Logout</a>
+      		</div>
+    	</div>
+  		</div>
+	</nav>
 	
 	<div class="container">
 		<div class="row justify-content-center">

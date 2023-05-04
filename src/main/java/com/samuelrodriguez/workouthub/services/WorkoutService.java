@@ -31,4 +31,8 @@ public class WorkoutService {
 		return workoutRepo.findByUserId(id);
 	}
 	
+	public List<Workout> getExploreWorkouts(Long id){
+		return workoutRepo.findByUserId(id);
+	}
+	
 }

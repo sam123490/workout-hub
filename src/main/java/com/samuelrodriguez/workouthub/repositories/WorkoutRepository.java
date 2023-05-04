@@ -10,4 +10,6 @@ public interface WorkoutRepository extends CrudRepository<Workout, Long> {
 
 	List<Workout> findByUserId(Long id);
 	
+	List<Workout> findFirst10ByUserIdNot(Long id);
+	
 }
