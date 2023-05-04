@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.samuelrodriguez.workouthub.models.LoginUser;
 import com.samuelrodriguez.workouthub.models.User;
@@ -36,13 +37,15 @@ public class LoginRegisterController {
 	public String processLogin(
 			@Valid @ModelAttribute("loginUser") LoginUser loginUser,
 			BindingResult result,
-			HttpSession session
+			HttpSession session,
+			RedirectAttributes redirectAttributes
 			) {
 		User user = userService.login(loginUser, result);
 		if(user == null) {
 			return "login.jsp";
 		}
 		session.setAttribute("userId", user.getId());
+		redirectAttributes.addFlashAttribute("success", "Welcome back " + user.getFirstName() + "!");
 		return "redirect:/dashboard";
 	}
 	

@@ -46,7 +46,7 @@
 
 	<div class="container">
 		<div class="row p-3 justify-content-center">
-			<div class="col-sm-12 col-md-10 col-lg-8">
+			<div class="col-sm-12 col-md-8 col-lg-6">
 				<h2>New Workout</h2>
 				<p>Let's start by giving your workout a name...</p>
 				<div class="p-3 border rounded bg-light">

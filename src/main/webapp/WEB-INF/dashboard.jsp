@@ -41,8 +41,16 @@
   		</div>
 	</nav>
 	
+	<c:choose>
+         <c:when test = "${success != null}">
+         	<div class="alert alert-primary alert-dismissible fade show" role="alert">
+         		<c:out value="${ success }" />
+  				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+         </c:when>
+	</c:choose>
 	<div class="container">
-		<div class="row p-3 justify-content-evenly">
+		<div class="row justify-content-evenly mt-3 gy-4">
 			<div class="col-md-5 col-sm-12">
 				<div class="card" >
 				  	<img src="..." class="card-img-top" alt="...">
@@ -64,7 +72,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row p-3 justify-content-evenly">
+		<div class="row justify-content-evenly mt-3 gy-4">
 			<div class="col-md-5 col-sm-12">
 				<div class="card" >
 				  	<img src="..." class="card-img-top" alt="...">
