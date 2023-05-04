@@ -31,14 +31,11 @@
 	            <li><a class="dropdown-item" href="/workouts/create">Create a Workout</a></li>
 	            <li><a class="dropdown-item" href="#">Personal Records</a></li>
 	            <li><a class="dropdown-item" href="#">Find Workouts</a></li>
-	            <li><hr class="dropdown-divider"></li>
-	            <li><a class="dropdown-item" href="#">My Account</a></li>
           	</ul>
         	</li>
       		</ul>
-      		<div class="d-flex">
-      			
-        		<a href="/logout" class="btn btn-outline-danger">Logout</a>
+      		<div>  			
+        		<a href="/logout" class="text-decoration-none link-light">Logout</a>
       		</div>
     	</div>
   		</div>
