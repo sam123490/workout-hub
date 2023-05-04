@@ -42,9 +42,9 @@
 	</nav>
 	
 	<c:choose>
-         <c:when test = "${success != null}">
+         <c:when test = "${welcomeMessage != null}">
          	<div class="alert alert-primary alert-dismissible fade show" role="alert">
-         		<c:out value="${ success }" />
+         		<c:out value="${ welcomeMessage }" />
   				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
          </c:when>

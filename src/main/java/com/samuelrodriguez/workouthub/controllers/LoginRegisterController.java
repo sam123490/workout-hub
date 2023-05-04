@@ -45,7 +45,7 @@ public class LoginRegisterController {
 			return "login.jsp";
 		}
 		session.setAttribute("userId", user.getId());
-		redirectAttributes.addFlashAttribute("success", "Welcome back " + user.getFirstName() + "!");
+		redirectAttributes.addFlashAttribute("welcomeMessage", "Welcome back " + user.getFirstName() + "!");
 		return "redirect:/dashboard";
 	}
 	
