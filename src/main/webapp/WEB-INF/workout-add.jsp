@@ -122,8 +122,12 @@
 						<td><c:out value="${ exercise.repetitions }" /></td>
 						<td><c:out value="${ exercise.weight }" /> <c:out value="${ exercise.unit }" /></td>
 						<td><c:out value="${ exercise.note }" /></td>
-						<td>
-							<a href="/workouts/${workout.id}/exercises/${exercise.id}/edit">edit</a>
+						<td class="d-flex align-items-center">
+							<a href="/workouts/${workout.id}/exercises/${exercise.id}/edit" class="me-3">edit</a>
+							<form action="/workouts/${workout.id}/exercises/${exercise.id}/delete" method="post">
+    							<input type="hidden" name="_method" value="delete">
+    							<input type="submit" class="link-danger border-0 bg-white" value="delete">
+							</form>
 						</td>
 					</tr>
 					</c:forEach>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,7 +65,20 @@ public class ExerciseController {
 			return "exercise-edit.jsp";
 		}
 		exerciseService.createOrUpdate(editExercise);
-		return "redirect:/workouts/" + editExercise.getWorkout().getId() + "/edit";
+		return "redirect:/workouts/" + workoutId + "/edit";
+	}
+	
+	@DeleteMapping("/workouts/{workoutId}/exercises/{id}/delete")
+	public String processExerciseDelete(
+			@PathVariable("workoutId") Long workoutId,
+			@PathVariable("id") Long exerciseId,
+			HttpSession session
+			) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		exerciseService.deleteExercise(exerciseId);
+		return "redirect:/workouts/" + workoutId + "/edit";
 	}
 	
 }

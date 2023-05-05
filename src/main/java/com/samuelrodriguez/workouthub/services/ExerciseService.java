@@ -26,4 +26,8 @@ public class ExerciseService {
 		}
 	}
 	
+	public void deleteExercise(Long id) {
+		exerciseRepo.deleteById(id);
+	}
+	
 }

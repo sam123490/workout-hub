@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			<div class="col-md-8 col-sm-12">
-				<p>Add Picture Here</p>
+				<img src="/static/img/gym_image_2.jpg" class="img-fluid" alt="gym" />
 			</div>
 		</div>
 	</div>

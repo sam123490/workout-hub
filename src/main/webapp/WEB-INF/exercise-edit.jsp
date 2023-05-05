@@ -98,7 +98,7 @@
 			</div>
 			<div class="mt-3 col-sm-12 col-md-8">
 				<h4>Exercises</h4>
-				<table class="table table-striped">
+				<table class="table table-striped table-hover border">
 					<tr>
 						<th>name</th>
 						<th>sets</th>
