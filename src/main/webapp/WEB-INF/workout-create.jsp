@@ -14,7 +14,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  		<div class="container-fluid">
+  		<div class="container">
     		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
     		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
 	</nav>
 
 	<div class="container">
-		<div class="row p-3 justify-content-center">
+		<div class="row mt-5 justify-content-center">
 			<div class="col-sm-12 col-md-8 col-lg-6">
 				<h2>New Workout</h2>
 				<p>Let's start by giving your workout a name...</p>
@@ -62,9 +62,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+        <div class="row mt-3">
 			<div class="col-12 d-flex justify-content-center">
-				<a href="/dashboard" class="mt-3">cancel</a>
+				<a href="/dashboard">cancel</a>
 			</div>
 		</div>
 	</div>

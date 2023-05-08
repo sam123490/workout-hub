@@ -47,7 +47,7 @@
 	</nav>
 	
 	<div class="container">
-		<div class="row mt-3 justify-content-center">
+		<div class="row mt-5 justify-content-center">
 			<div class="col-sm-12 col-md-10 col-lg-8">
 				<h2>My Workouts</h2>
 				<table class="table table-striped table-hover border">
