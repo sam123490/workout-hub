@@ -16,6 +16,7 @@
 	<div class="container">
 		<div class="row mt-5">
 			<div class="col-md-4 col-sm-12">
+				<h1>Workout Hub</h1>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/register" method="post" modelAttribute="newUser">
 						<form:label for="firstName" path="firstName" class="form-label">First Name:</form:label>

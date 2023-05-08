@@ -16,6 +16,7 @@
 	<div class="container">
 		<div class="row mt-5">
 			<div class="col-md-4 col-sm-12">
+				<h1>Workout Hub</h1>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/login" method="post" modelAttribute="loginUser">
 						<form:label for="email" path="email" class="form-label">Email:</form:label>
