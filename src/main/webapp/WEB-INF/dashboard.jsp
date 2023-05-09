@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WorkoutHub | Dashboard</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="stylesheet" href="../static/CSS/style.css" />
 </head>
 <body>
 
@@ -43,17 +44,23 @@
 	
 	<c:choose>
          <c:when test = "${welcomeMessage != null}">
-         	<div class="alert alert-primary alert-dismissible fade show" role="alert">
+         	<div class="alert alert-primary alert-dismissible fade show mb-0" role="alert">
          		<c:out value="${ welcomeMessage }" />
   				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
          </c:when>
 	</c:choose>
-	<div class="container">
-		<div class="row mt-3 justify-content-evenly gy-4">
-			<div class="col-md-5 col-sm-12">
+
+<!-- 	<div class="hero">
+		<div class="color-overlay d-flex justify-content-center align-items-center">
+			<a href="#">Do Something Today</a>
+		</div>
+	</div> -->
+
+	<div class="container-fluid bg-secondary">
+		<div class="row justify-content-evenly">
+			<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
 				<div class="card" >
-				  	<img src="..." class="card-img-top" alt="...">
 				  	<div class="card-body">
 				    	<h5 class="card-title">My Workouts</h5>
 				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -61,7 +68,7 @@
 				  	</div>
 				</div>
 			</div>
-			<div class="col-md-5 col-sm-12">
+			<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
 				<div class="card" >
 				  	<img src="..." class="card-img-top" alt="...">
 				  	<div class="card-body">
@@ -72,8 +79,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row justify-content-evenly mt-3 gy-4">
-			<div class="col-md-5 col-sm-12">
+		<div class="row justify-content-evenly">
+			<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
 				<div class="card" >
 				  	<img src="..." class="card-img-top" alt="...">
 				  	<div class="card-body">
@@ -83,7 +90,7 @@
 				  	</div>
 				</div>
 			</div>
-			<div class="col-md-5 col-sm-12">
+			<div class="mt-4 mb-4 col-sm-12 col-md-5 col-lg-4">
 				<div class="card" >
 				  	<img src="..." class="card-img-top" alt="...">
 				  	<div class="card-body">

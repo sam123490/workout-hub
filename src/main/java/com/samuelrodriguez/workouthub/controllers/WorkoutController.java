@@ -119,7 +119,7 @@ public class WorkoutController {
 			return "redirect:/login";
 		}
 		model.addAttribute("workout", workoutService.getOne(workoutId));
-		return "workout-view.jsp";
+		return "view-workout.jsp";
 	}
 	
 	@GetMapping("/workouts/my_workouts")

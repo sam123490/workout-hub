@@ -43,7 +43,7 @@
 	
 	<c:choose>
          <c:when test = "${success != null}">
-         	<div class="alert alert-success alert-dismissible fade show" role="alert">
+         	<div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
          		<c:out value="${ success }" />
   				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
@@ -94,7 +94,7 @@
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
 						<input type="submit" value="Add Exercise" class="btn btn-primary mt-3" />
-						<a href="/workouts/my_workouts" class="btn btn-outline-success mt-3">Finish</a>
+						<a href="/workouts/${ workout.id }/view" class="btn btn-outline-success mt-3">Finish</a>
 					</form:form>
 				</div>
 			</div>

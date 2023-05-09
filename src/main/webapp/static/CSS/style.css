@@ -1,0 +1,11 @@
+.hero {
+	background-color: black;
+	background-image: url("../img/dashboard.jpg");
+	background-size: cover;
+}
+
+.color-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
