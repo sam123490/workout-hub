@@ -16,16 +16,13 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  		<div class="container-fluid">
+  		<div class="container">
     		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
     		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
     		</button>
     	<div class="collapse navbar-collapse" id="navbarSupportedContent">
       		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      			<li class="nav-item">
-          		<a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
-        		</li>
         		<li class="nav-item">
           		<a class="nav-link active" aria-current="page" href="#">My Account</a>
         		</li>
@@ -39,7 +36,7 @@
           	</ul>
         	</li>
       		</ul>
-      		<div>
+      		<div>  			
         		<a href="/logout" class="text-decoration-none link-light">Logout</a>
       		</div>
     	</div>
@@ -50,25 +47,31 @@
 		<div class="row mt-5 justify-content-center">
 			<div class="col-sm-12 col-md-10 col-lg-8">
 				<h2>My Workouts</h2>
-				<table class="table table-striped table-hover border">
-					<tr>
-						<th>Name</th>
-						<th># of Exercises</th>
-						<th>Created</th>
-						<th>Actions</th>
-					</tr>
-					<c:forEach var="workout" items="${ workouts }">
-					<tr>
-						<td><c:out value="${ workout.name }" /></td>
-						<td>${fn:length(workout.exercises)}</td>
-						<td><fmt:formatDate type = "date" value = "${workout.createdAt}" /></td>
-						<td>
-							<a href="/workouts/${ workout.id }/edit">edit</a>
-							<a href="/workouts/${ workout.id }/work_out" class="ms-2">work out!</a>
-						</td>
-					</tr>
-					</c:forEach>
-				</table>
+				<div class="table-responsive">
+					<table class="table table-striped table-hover align-middle">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col"># of Exercises</th>
+								<th scope="col">Created</th>
+								<th scope="col">Actions</th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider">
+							<c:forEach var="workout" items="${ workouts }">
+							<tr>
+								<td><c:out value="${ workout.name }" /></td>
+								<td>${fn:length(workout.exercises)}</td>
+								<td><fmt:formatDate type = "date" value = "${workout.createdAt}" /></td>
+								<td>
+									<a href="/workouts/${ workout.id }/edit">edit</a>
+									<a href="/workouts/${ workout.id }/work_out" class="ms-2">work out!</a>
+								</td>
+							</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>

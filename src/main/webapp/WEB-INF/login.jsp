@@ -15,7 +15,7 @@
 
 	<div class="container">
 		<div class="row mt-5">
-			<div class="col-md-4 col-sm-12">
+			<div class="col-sm-12 col-md-4">
 				<h1>Workout Hub</h1>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/login" method="post" modelAttribute="loginUser">
@@ -29,16 +29,15 @@
 						
 						<input type="submit" class="btn btn-primary mt-3" />
 					</form:form>
-					<p>Don't have an account?</p>
+					<p class="mt-4">Don't have an account?</p>
 					<a href="/register">register here</a>
 				</div>
 			</div>
-			<div class="col-md-8 col-sm-12">
+			<div class="col-sm-12 col-md-8">
 				<img src="/static/img/gym_image_1.jpg" class="img-fluid" alt="gym" />
 			</div>
 		</div>
 	</div>
 	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

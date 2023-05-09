@@ -14,16 +14,13 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  		<div class="container-fluid">
+  		<div class="container">
     		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
     		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
     		</button>
     	<div class="collapse navbar-collapse" id="navbarSupportedContent">
       		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      			<li class="nav-item">
-          		<a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
-        		</li>
         		<li class="nav-item">
           		<a class="nav-link active" aria-current="page" href="#">My Account</a>
         		</li>
@@ -37,7 +34,7 @@
           	</ul>
         	</li>
       		</ul>
-      		<div>
+      		<div>  			
         		<a href="/logout" class="text-decoration-none link-light">Logout</a>
       		</div>
     	</div>
@@ -54,14 +51,11 @@
 	</c:choose>
 	
 	<div class="container">
-		<div class="row mt-3">
-			<div class="col">
+		<div class="row mt-5">
+			<div class="col-12">
 				<h2>Workout: <c:out value="${ workout.name }" /></h2>
 			</div>
 		</div>
-	</div>
-	
-	<div class="container">
 		<div class="row justify-content-center">
 			<div class="mt-3 col-sm-12 col-md-4">
 				<h4>Add Exercise</h4>
@@ -88,7 +82,7 @@
 							<option disabled selected>SELECT A UNIT</option>
 							<option value="lbs">lbs</option>
 							<option value="kg">Kg</option>
-							<option value="Other">Other</option>
+							<option value="Other">other</option>
 						</form:select>
 
 						<form:label for="weight" path="weight" class="form-label">Weight:</form:label>
@@ -100,38 +94,44 @@
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
 						<input type="submit" value="Add Exercise" class="btn btn-primary mt-3" />
-						<a href="/workouts/${ workout.id }/view" class="btn btn-outline-success mt-3">Complete Workout</a>
+						<a href="/workouts/my_workouts" class="btn btn-outline-success mt-3">Finish</a>
 					</form:form>
 				</div>
 			</div>
 			<div class="mt-3 col-sm-12 col-md-8">
 				<h4>Exercises</h4>
-				<table class="table table-striped table-hover border">
-					<tr>
-						<th>name</th>
-						<th>sets</th>
-						<th>reps</th>
-						<th>weight</th>
-						<th>note</th>
-						<th>actions</th>
-					</tr>
-					<c:forEach var="exercise" items="${ workout.exercises }">
-					<tr>
-						<td><c:out value="${ exercise.name }" /></td>
-						<td><c:out value="${ exercise.sets }" /></td>
-						<td><c:out value="${ exercise.repetitions }" /></td>
-						<td><c:out value="${ exercise.weight }" /> <c:out value="${ exercise.unit }" /></td>
-						<td><c:out value="${ exercise.note }" /></td>
-						<td class="d-flex align-items-center">
-							<a href="/workouts/${workout.id}/exercises/${exercise.id}/edit" class="me-3">edit</a>
-							<form action="/workouts/${workout.id}/exercises/${exercise.id}/delete" method="post">
-    							<input type="hidden" name="_method" value="delete">
-    							<input type="submit" class="link-danger border-0 bg-white" value="delete">
-							</form>
-						</td>
-					</tr>
-					</c:forEach>
-				</table>
+				<div class="table-responsive">
+					<table class="table table-striped table-hover align-middle">
+						<thead>
+							<tr>
+								<th>name</th>
+								<th>sets</th>
+								<th>reps</th>
+								<th>weight</th>
+								<th>note</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider">
+							<c:forEach var="exercise" items="${ workout.exercises }">
+							<tr>
+								<td><c:out value="${ exercise.name }" /></td>
+								<td><c:out value="${ exercise.sets }" /></td>
+								<td><c:out value="${ exercise.repetitions }" /></td>
+								<td><c:out value="${ exercise.weight }" /> <c:out value="${ exercise.unit }" /></td>
+								<td><c:out value="${ exercise.note }" /></td>
+								<td class="d-flex align-items-center">
+									<a href="/workouts/${workout.id}/exercises/${exercise.id}/edit" class="me-2">edit</a>
+									<form action="/workouts/${workout.id}/exercises/${exercise.id}/delete" method="post">
+		    							<input type="hidden" name="_method" value="delete">
+		    							<input type="submit" class="btn btn-link text-danger" value="delete">
+									</form>
+								</td>
+							</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>

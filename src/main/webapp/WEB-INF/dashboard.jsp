@@ -14,7 +14,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  		<div class="container-fluid">
+  		<div class="container">
     		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
     		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
@@ -50,7 +50,7 @@
          </c:when>
 	</c:choose>
 	<div class="container">
-		<div class="row justify-content-evenly mt-3 gy-4">
+		<div class="row mt-3 justify-content-evenly gy-4">
 			<div class="col-md-5 col-sm-12">
 				<div class="card" >
 				  	<img src="..." class="card-img-top" alt="...">
