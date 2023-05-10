@@ -109,8 +109,20 @@ public class WorkoutController {
 		return "redirect:/workouts/" + workoutId + "/edit";
 	}
 	
+	@GetMapping("/workouts/my_workouts")
+	public String renderUserWorkouts(
+			Model model,
+			HttpSession session
+			) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("workouts", workoutService.getByUserId( (Long) session.getAttribute("userId")));
+		return "user-workouts.jsp";
+	}
+	
 	@GetMapping("/workouts/{workoutId}/view")
-	public String renderWorkout(
+	public String renderViewWorkout(
 			@PathVariable("workoutId") Long workoutId,
 			Model model,
 			HttpSession session
@@ -122,16 +134,17 @@ public class WorkoutController {
 		return "view-workout.jsp";
 	}
 	
-	@GetMapping("/workouts/my_workouts")
-	public String renderUserWorkouts(
+	@GetMapping("/workouts/{workoutId}/workout")
+	public String renderWorkout(
+			@PathVariable("workoutId") Long workoutId,
 			Model model,
 			HttpSession session
 			) {
 		if(session.getAttribute("userId") == null) {
 			return "redirect:/login";
 		}
-		model.addAttribute("workouts", workoutService.getByUserId( (Long) session.getAttribute("userId")));
-		return "user-workouts.jsp";
+		model.addAttribute("workout", workoutService.getOne(workoutId));
+		return "workout.jsp";
 	}
 	
 }

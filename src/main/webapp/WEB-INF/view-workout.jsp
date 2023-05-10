@@ -43,7 +43,7 @@
 
 	<div class="container">
 		<div class="row mt-5 justify-content-center">
-			<div class="col-sm-12 col md-10 col-lg-8 d-flex justify-content-between align-items-center">
+			<div class="col-sm-12 col-md-10 col-lg-8 d-flex justify-content-between align-items-center">
 				<h3><c:out value="${ workout.name }" /></h3>
 				<p>Created: <fmt:formatDate type = "date" value = "${workout.createdAt}" /></p>
 				<a href="#" class="btn btn-primary">Work Out!</a>
@@ -59,13 +59,18 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-12 col-md-8 d-flex justify-content-between">
+						<div class="col-sm-12 col-md-7 d-flex justify-content-between">
 							<p>sets: <c:out value="${ exercise.sets }" /></p>
 							<p>reps: <c:out value="${ exercise.repetitions }" /></p>
 							<p>weight: <c:out value="${ exercise.weight }" /> <c:out value="${ exercise.unit }" /></p>
 						</div>
-						<div class="col-sm-12 col-md-4">
+						<div class="col-sm-12 col-md-5">
 							<p>note: <c:out value="${ exercise.note }" /></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<button onclick="hide(this)" class="btn btn-outline-success">Complete!</button>
 						</div>
 					</div>
 				</div>
@@ -75,5 +80,6 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	<script src="/static/js/script.js"></script>
 </body>
 </html>
