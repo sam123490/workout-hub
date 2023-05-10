@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   		<div class="container">
     		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
     		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,8 +60,8 @@
 			</div>
 		</div>
         <div class="row mt-3">
-			<div class="col-12 d-flex justify-content-center">
-				<a href="/dashboard">cancel</a>
+			<div class="col text-center">
+				<a href="/dashboard#main">cancel</a>
 			</div>
 		</div>
 	</div>

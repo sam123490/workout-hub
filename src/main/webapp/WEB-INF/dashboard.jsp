@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   		<div class="container">
     		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
     		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,19 +51,28 @@
          </c:when>
 	</c:choose>
 
-<!-- 	<div class="hero">
+ 	<div class="bgimg">
 		<div class="color-overlay d-flex justify-content-center align-items-center">
-			<a href="#">Do Something Today</a>
+			<div class="container">
+				<div class="row justify-content-center gy-3">
+					<div class="col-12 d-flex  justify-content-center">
+						<h1 id="main-header">workouthub</h1>
+					</div>
+					<div class="col-12 d-flex  justify-content-center">
+						<a href="#main" class="btn btn-dark">Do Something Today</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div> -->
+	</div>
 
-	<div class="container-fluid bg-secondary">
+	<div id="main" class="container-fluid bg-secondary">
 		<div class="row justify-content-evenly">
 			<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
 				<div class="card" >
 				  	<div class="card-body">
 				    	<h5 class="card-title">My Workouts</h5>
-				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<p class="card-text">All of your workouts online. No more struggling to keep track of your programs.</p>
 				    	<a href="/workouts/my_workouts" class="btn btn-primary">View</a>
 				  	</div>
 				</div>
@@ -73,7 +82,7 @@
 				  	<img src="..." class="card-img-top" alt="...">
 				  	<div class="card-body">
 				    	<h5 class="card-title">Create a Workout</h5>
-				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<p class="card-text">Craft your perfect workout!</p>
 				    	<a href="/workouts/create" class="btn btn-primary">Start!</a>
 				  	</div>
 				</div>
@@ -85,7 +94,7 @@
 				  	<img src="..." class="card-img-top" alt="...">
 				  	<div class="card-body">
 				    	<h5 class="card-title">My Personal Records</h5>
-				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<p class="card-text">Save all of your personal records and one-rep maxes here.</p>
 				    	<a href="#" class="btn btn-primary">My Account</a>
 				  	</div>
 				</div>
@@ -95,10 +104,16 @@
 				  	<img src="..." class="card-img-top" alt="...">
 				  	<div class="card-body">
 				    	<h5 class="card-title">Find Workouts Made By Others</h5>
-				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				    	<p class="card-text">Want to try something new? Explore other people's workouts.</p>
 				    	<a href="#" class="btn btn-primary">Explore</a>
 				  	</div>
 				</div>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col text-center">
+				<p>coded by Samuel Rodriguez</p>
 			</div>
 		</div>
 	</div>

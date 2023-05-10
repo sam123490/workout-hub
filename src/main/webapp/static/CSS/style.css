@@ -1,11 +1,28 @@
-.hero {
-	background-color: black;
-	background-image: url("../img/dashboard.jpg");
+.bgimg {
+ 	background-color: black;
+	background-image: url('../img/dashboard.jpg');
+	color: white;
 	background-size: cover;
+	min-height: 100vh;
+	position: relative;
 }
 
 .color-overlay {
+	background-color: rgba(0, 0, 0,.2);
 	position: absolute;
 	width: 100%;
 	height: 100%;
+}
+
+#main-header {
+	font-size: 4rem;
+}
+
+@media (max-width: 768px) {
+	.bgimg {
+		min-height: 60vh;
+	}
+	#main-header {
+	font-size: calc(1.525rem + 3.3vw);
+	}
 }

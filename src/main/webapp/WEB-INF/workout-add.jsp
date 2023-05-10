@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   		<div class="container">
     		<a class="navbar-brand" href="/dashboard">Workout Hub</a>
     		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
 						<form:input id="note" type="text" path="note" class="form-control" placeholder="optional" />
 							
 						<input type="submit" value="Add Exercise" class="btn btn-primary mt-3" />
-						<a href="/workouts/${ workout.id }/view" class="btn btn-outline-success mt-3">Finish</a>
+						<a href="/workouts/my_workouts" class="btn btn-outline-success mt-3">Finish</a>
 					</form:form>
 				</div>
 			</div>
