@@ -51,14 +51,12 @@
          </c:when>
 	</c:choose>
 	
-	<div class="bg-overlay">
-		<div id="title-height" class="container text-center d-flex justify-content-center align-items-center">
-			<div class="row gy-3">
-				<div class="col-12">
+	<div class="color-overlay">
+		<div class="container text-center">
+			<div id="title-height" class="row align-items-center">
+				<div class="col">
 					<h1 id="title-header" class="text-white">workouthub</h1>
-				</div>
-				<div class="col-12">
-					<a href="/dashboard#main" id="title-btn" class="btn btn-dark">Do Something Today</a>
+					<a href="/dashboard#main" id="title-btn" class="btn btn-dark mt-3">Do Something Today</a>
 				</div>
 			</div>
 		</div>

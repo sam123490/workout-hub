@@ -14,7 +14,7 @@ body {
 }
 
 @media (max-width: 768px) {
-	#title {
+	#title-height {
 		min-height: 25vh
 	}
 
@@ -27,6 +27,6 @@ body {
 	}
 }
 
-.bg-overlay {
+.color-overlay {
 	background-color: rgba(0, 0, 0,.2);
 }
