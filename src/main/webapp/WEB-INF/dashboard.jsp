@@ -50,70 +50,68 @@
 			</div>
          </c:when>
 	</c:choose>
-
- 	<div class="bgimg">
-		<div class="color-overlay d-flex justify-content-center align-items-center">
-			<div class="container">
-				<div class="row justify-content-center gy-3">
-					<div class="col-12 d-flex  justify-content-center">
-						<h1 id="main-header">workouthub</h1>
+	
+	<div class="bg-overlay">
+		<div id="title-height" class="container text-center d-flex justify-content-center align-items-center">
+			<div class="row gy-3">
+				<div class="col-12">
+					<h1 id="title-header" class="text-white">workouthub</h1>
+				</div>
+				<div class="col-12">
+					<a href="/dashboard#main" id="title-btn" class="btn btn-dark">Do Something Today</a>
+				</div>
+			</div>
+		</div>
+		
+		<div id="main" class="container-fluid">
+			<div class="row justify-content-evenly">
+				<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
+					<div class="card" >
+					  	<div class="card-body">
+					    	<h5 class="card-title">My Workouts</h5>
+					    	<p class="card-text">All of your workouts online. No more struggling to keep track of your programs.</p>
+					    	<a href="/workouts/my_workouts" class="btn btn-primary">View</a>
+					  	</div>
 					</div>
-					<div class="col-12 d-flex  justify-content-center">
-						<a href="#main" class="btn btn-dark">Do Something Today</a>
+				</div>
+				<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
+					<div class="card" >
+					  	<img src="..." class="card-img-top" alt="...">
+					  	<div class="card-body">
+					    	<h5 class="card-title">Create a Workout</h5>
+					    	<p class="card-text">Craft your perfect workout!</p>
+					    	<a href="/workouts/create" class="btn btn-primary">Start!</a>
+					  	</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
-	<div id="main" class="container-fluid bg-secondary">
-		<div class="row justify-content-evenly">
-			<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
-				<div class="card" >
-				  	<div class="card-body">
-				    	<h5 class="card-title">My Workouts</h5>
-				    	<p class="card-text">All of your workouts online. No more struggling to keep track of your programs.</p>
-				    	<a href="/workouts/my_workouts" class="btn btn-primary">View</a>
-				  	</div>
+			<div class="row justify-content-evenly">
+				<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
+					<div class="card" >
+					  	<img src="..." class="card-img-top" alt="...">
+					  	<div class="card-body">
+					    	<h5 class="card-title">My Personal Records</h5>
+					    	<p class="card-text">Save all of your personal records and one-rep maxes here.</p>
+					    	<a href="#" class="btn btn-primary">My Account</a>
+					  	</div>
+					</div>
+				</div>
+				<div class="mt-4 mb-4 col-sm-12 col-md-5 col-lg-4">
+					<div class="card" >
+					  	<img src="..." class="card-img-top" alt="...">
+					  	<div class="card-body">
+					    	<h5 class="card-title">Find Workouts Made By Others</h5>
+					    	<p class="card-text">Want to try something new? Explore other people's workouts.</p>
+					    	<a href="#" class="btn btn-primary">Explore</a>
+					  	</div>
+					</div>
 				</div>
 			</div>
-			<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
-				<div class="card" >
-				  	<img src="..." class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<h5 class="card-title">Create a Workout</h5>
-				    	<p class="card-text">Craft your perfect workout!</p>
-				    	<a href="/workouts/create" class="btn btn-primary">Start!</a>
-				  	</div>
+			<hr />
+			<div class="row">
+				<div class="col text-center">
+					<p>coded by Samuel Rodriguez</p>
 				</div>
-			</div>
-		</div>
-		<div class="row justify-content-evenly">
-			<div class="mt-4 col-sm-12 col-md-5 col-lg-4">
-				<div class="card" >
-				  	<img src="..." class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<h5 class="card-title">My Personal Records</h5>
-				    	<p class="card-text">Save all of your personal records and one-rep maxes here.</p>
-				    	<a href="#" class="btn btn-primary">My Account</a>
-				  	</div>
-				</div>
-			</div>
-			<div class="mt-4 mb-4 col-sm-12 col-md-5 col-lg-4">
-				<div class="card" >
-				  	<img src="..." class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<h5 class="card-title">Find Workouts Made By Others</h5>
-				    	<p class="card-text">Want to try something new? Explore other people's workouts.</p>
-				    	<a href="#" class="btn btn-primary">Explore</a>
-				  	</div>
-				</div>
-			</div>
-		</div>
-		<hr />
-		<div class="row">
-			<div class="col text-center">
-				<p>coded by Samuel Rodriguez</p>
 			</div>
 		</div>
 	</div>
