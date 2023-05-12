@@ -19,25 +19,35 @@
 				<h1>Workout Hub</h1>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/register" method="post" modelAttribute="newUser">
-						<form:label for="firstName" path="firstName" class="form-label">First Name:</form:label>
 						<form:errors path="firstName" class="text-danger" />
-						<form:input id="firstName" path="firstName" class="form-control" />
+						<div class="form-floating mb-3">
+							<form:input id="firstName" path="firstName" class="form-control" placeholder="John" />
+							<form:label for="firstName" path="firstName" class="form-label">First Name:</form:label>
+						</div>
 					
-						<form:label for="lastName" path="lastName" class="form-label">Last Name:</form:label>
 						<form:errors path="lastName" class="text-danger" />
-						<form:input id="lastName" path="lastName" class="form-control" />
+						<div class="form-floating mb-3">
+							<form:input id="lastName" path="lastName" class="form-control" placeholder="Doe" />
+							<form:label for="lastName" path="lastName" class="form-label">Last Name:</form:label>
+						</div>
 					
-						<form:label for="email" path="email" class="form-label">Email:</form:label>
 						<form:errors path="email" class="text-danger" />
-						<form:input id="email" path="email" class="form-control" />
+						<div class="form-floating mb-3">
+							<form:input id="email" path="email" class="form-control" placeholder="name@example.com" />
+							<form:label for="email" path="email" class="form-label">Email:</form:label>
+						</div>
 						
-						<form:label for="password" path="password" class="form-label">Password:</form:label>
 						<form:errors path="password" class="text-danger" />
-						<form:input id="password" type="password" path="password" class="form-control" />
+						<div class="form-floating mb-3">
+							<form:input id="password" type="password" path="password" class="form-control" placeholder="password" />
+							<form:label for="password" path="password" class="form-label">Password:</form:label>
+						</div>
 						
-						<form:label for="confirmPassword" path="password" class="form-label">Confirm Password:</form:label>
 						<form:errors path="confirmPassword" class="text-danger" />
-						<form:input id="confirmPassword" type="password" path="confirmPassword" class="form-control" />
+						<div class="form-floating mb-3">
+							<form:input id="confirmPassword" type="password" path="confirmPassword" class="form-control" placeholder="confirm" />
+							<form:label for="confirmPassword" path="password" class="form-label">Confirm Password:</form:label>
+						</div>
 						
 						<input type="submit" class="btn btn-primary mt-3" />
 					</form:form>

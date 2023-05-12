@@ -19,13 +19,17 @@
 				<h1>Workout Hub</h1>
 				<div class="p-3 border rounded bg-light">
 					<form:form action="/login" method="post" modelAttribute="loginUser">
-						<form:label for="email" path="email" class="form-label">Email:</form:label>
 						<form:errors path="email" class="text-danger" />
-						<form:input id="email" path="email" class="form-control" />
+						<div class="form-floating mb-3">
+							<form:input id="email" path="email" class="form-control" placeholder="name@example.com" />
+							<form:label for="email" path="email" class="form-label">Email:</form:label>
+						</div>
 						
-						<form:label for="password" path="password" class="form-label">Password:</form:label>
 						<form:errors path="password" class="text-danger" />
-						<form:input id="password" type="password" path="password" class="form-control" />
+						<div class="form-floating mb-3">
+							<form:input id="password" type="password" path="password" class="form-control" placeholder="password" />
+							<form:label for="password" path="password" class="form-label">Password:</form:label>
+						</div>
 						
 						<input type="submit" class="btn btn-primary mt-3" />
 					</form:form>
